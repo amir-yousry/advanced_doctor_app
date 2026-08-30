@@ -18,7 +18,7 @@ class DoctorsBlueContainer extends StatelessWidget {
             height: 165.h,
             padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 16.h),
             decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(24.0),
+              borderRadius: BorderRadius.circular(24.r),
               image: const DecorationImage(
                 image: AssetImage('assets/images/home_blue_pattern.png'),
                 fit: BoxFit.cover,
@@ -39,7 +39,7 @@ class DoctorsBlueContainer extends StatelessWidget {
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.white,
                       shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(48.0),
+                        borderRadius: BorderRadius.circular(48.r),
                       ),
                     ),
                     child: Text(
@@ -54,7 +54,7 @@ class DoctorsBlueContainer extends StatelessWidget {
           Positioned(
             right: 8.w,
             top: 0,
-            child: Image.asset('assets/images/omar.png', height: 200.h),
+            child: Image.asset('assets/svgs/doctor_girl.svg', height: 200.h),
           ),
         ],
       ),
