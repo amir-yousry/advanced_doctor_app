@@ -10,34 +10,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 class SignupBlocListener extends StatelessWidget {
   const SignupBlocListener({super.key});
 
-  @override
-  Widget build(BuildContext context) {
-    return BlocListener<SignupCubit, SignupState>(
-      listenWhen: (previous, current) =>
-          current is Loading || current is Success || current is Error,
-      listener: (context, state) {
-        state.whenOrNull(
-          loading: () {
-            showDialog(
-              context: context,
-              builder: (context) => const Center(
-                child: CircularProgressIndicator(color: ColorsManager.mainBlue),
-              ),
-            );
-          },
-          success: (signupResponse) {
-            context.pop();
-            showSuccessDialog(context);
-          },
-          error: (error) {
-            setupErrorState(context, error);
-          },
-        );
-      },
-      child: const SizedBox.shrink(),
-    );
-  }
-
   void showSuccessDialog(BuildContext context) {
     showDialog(
       context: context,
@@ -85,6 +57,34 @@ class SignupBlocListener extends StatelessWidget {
           ),
         ],
       ),
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return BlocListener<SignupCubit, SignupState>(
+      listenWhen: (previous, current) =>
+          current is Loading || current is Success || current is Error,
+      listener: (context, state) {
+        state.whenOrNull(
+          loading: () {
+            showDialog(
+              context: context,
+              builder: (context) => const Center(
+                child: CircularProgressIndicator(color: ColorsManager.mainBlue),
+              ),
+            );
+          },
+          success: (signupResponse) {
+            context.pop();
+            showSuccessDialog(context);
+          },
+          error: (error) {
+            setupErrorState(context, error);
+          },
+        );
+      },
+      child: const SizedBox.shrink(),
     );
   }
 }
