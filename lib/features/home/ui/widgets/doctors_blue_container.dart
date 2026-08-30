@@ -29,7 +29,7 @@ class DoctorsBlueContainer extends StatelessWidget {
               children: [
                 Text(
                   'Book and\nschedule with\nnearest doctor',
-                  style: TextStyles.font18WhiteMedium,
+                  style: AppTextStyles.font18WhiteMedium,
                   textAlign: TextAlign.start,
                 ),
                 Gap(16.h),
@@ -44,7 +44,7 @@ class DoctorsBlueContainer extends StatelessWidget {
                     ),
                     child: Text(
                       'Find Nearby',
-                      style: TextStyles.font12BlueRegular,
+                      style: AppTextStyles.font12BlueRegular,
                     ),
                   ),
                 ),

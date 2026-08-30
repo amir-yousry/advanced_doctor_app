@@ -29,11 +29,11 @@ class SignupScreen extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text('Create Account', style: TextStyles.font24BlueBold),
+                Text('Create Account', style: AppTextStyles.font24BlueBold),
                 Gap(8.h),
                 Text(
                   'Sign up now and start exploring all that our app has to offer. We\'re excited to welcome you to our community!',
-                  style: TextStyles.font14GrayRegular,
+                  style: AppTextStyles.font14GrayRegular,
                 ),
                 Gap(36.h),
                 Column(
@@ -42,7 +42,7 @@ class SignupScreen extends StatelessWidget {
                     Gap(40.h),
                     AppTextButton(
                       buttonText: "Create Account",
-                      textStyle: TextStyles.font16WhiteSemiBold,
+                      textStyle: AppTextStyles.font16WhiteSemiBold,
                       onPressed: () {
                         validateThenDoSignup(context);
                       },

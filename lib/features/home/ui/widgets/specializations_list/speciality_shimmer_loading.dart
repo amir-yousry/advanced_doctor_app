@@ -19,7 +19,7 @@ class SpecialityShimmerLoading extends StatelessWidget {
             child: Column(
               children: [
                 Shimmer.fromColors(
-                  baseColor: ColorsManager.lightGray,
+                  baseColor: AppColors.lightGray,
                   highlightColor: Colors.white,
                   child: const CircleAvatar(
                     radius: 28,
@@ -28,13 +28,13 @@ class SpecialityShimmerLoading extends StatelessWidget {
                 ),
                 Gap(14.h),
                 Shimmer.fromColors(
-                  baseColor: ColorsManager.lightGray,
+                  baseColor: AppColors.lightGray,
                   highlightColor: Colors.white,
                   child: Container(
                     height: 14.h,
                     width: 50.w,
                     decoration: BoxDecoration(
-                      color: ColorsManager.lightGray,
+                      color: AppColors.lightGray,
                       borderRadius: BorderRadius.circular(12),
                     ),
                   ),

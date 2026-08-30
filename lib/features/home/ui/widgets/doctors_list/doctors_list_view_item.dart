@@ -20,7 +20,7 @@ class DoctorsListViewItem extends StatelessWidget {
                 "https://static.wikia.nocookie.net/five-world-war/images/6/64/Hisoka.jpg/revision/latest?cb=20190313114050",
             progressIndicatorBuilder: (context, url, downloadProgress) {
               return Shimmer.fromColors(
-                baseColor: ColorsManager.lightGray,
+                baseColor: AppColors.lightGray,
                 highlightColor: Colors.white,
                 child: Container(
                   width: 110.w,
@@ -50,18 +50,18 @@ class DoctorsListViewItem extends StatelessWidget {
               children: [
                 Text(
                   doctorsModel?.name ?? 'Name',
-                  style: TextStyles.font18DarkBlueBold,
+                  style: AppTextStyles.font18DarkBlueBold,
                   overflow: TextOverflow.ellipsis,
                 ),
                 Gap(5.h),
                 Text(
                   '${doctorsModel?.degree} | ${doctorsModel?.phone}',
-                  style: TextStyles.font12GrayMedium,
+                  style: AppTextStyles.font12GrayMedium,
                 ),
                 Gap(5.h),
                 Text(
                   doctorsModel?.email ?? 'Email',
-                  style: TextStyles.font12GrayMedium,
+                  style: AppTextStyles.font12GrayMedium,
                 ),
               ],
             ),

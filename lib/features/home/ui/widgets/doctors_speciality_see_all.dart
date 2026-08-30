@@ -8,9 +8,9 @@ class DoctorsSpecialitySeeAll extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        Text('Doctors Speciality', style: TextStyles.font18DarkBlueSemiBold),
+        Text('Doctors Speciality', style: AppTextStyles.font18DarkBlueSemiBold),
         const Spacer(),
-        Text('See All', style: TextStyles.font12BlueRegular),
+        Text('See All', style: AppTextStyles.font12BlueRegular),
       ],
     );
   }

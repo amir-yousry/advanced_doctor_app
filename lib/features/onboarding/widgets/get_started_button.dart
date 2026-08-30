@@ -14,14 +14,14 @@ class GetStartedButton extends StatelessWidget {
         context.pushNamed(Routes.loginScreen);
       },
       style: ButtonStyle(
-        backgroundColor: WidgetStateProperty.all(ColorsManager.mainBlue),
+        backgroundColor: WidgetStateProperty.all(AppColors.mainBlue),
         tapTargetSize: MaterialTapTargetSize.shrinkWrap,
         minimumSize: WidgetStateProperty.all(const Size(double.infinity, 52)),
         shape: WidgetStateProperty.all(
           RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
         ),
       ),
-      child: Text('Get Started', style: TextStyles.font16WhiteMedium),
+      child: Text('Get Started', style: AppTextStyles.font16WhiteMedium),
     );
   }
 }

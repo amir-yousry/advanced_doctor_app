@@ -26,12 +26,12 @@ class SpecialityListViewItem extends StatelessWidget {
           itemIndex == selectedIndex
               ? Container(
                   decoration: BoxDecoration(
-                    border: Border.all(color: ColorsManager.darkBlue),
+                    border: Border.all(color: AppColors.darkBlue),
                     shape: BoxShape.circle,
                   ),
                   child: CircleAvatar(
                     radius: 28,
-                    backgroundColor: ColorsManager.lightBlue,
+                    backgroundColor: AppColors.lightBlue,
                     child: SvgPicture.asset(
                       'assets/svgs/general_speciality.svg',
                       height: 42.h,
@@ -41,7 +41,7 @@ class SpecialityListViewItem extends StatelessWidget {
                 )
               : CircleAvatar(
                   radius: 28,
-                  backgroundColor: ColorsManager.lightBlue,
+                  backgroundColor: AppColors.lightBlue,
                   child: SvgPicture.asset(
                     'assets/svgs/general_speciality.svg',
                     height: 40.h,
@@ -52,8 +52,8 @@ class SpecialityListViewItem extends StatelessWidget {
           Text(
             specializationsData?.name ?? 'Specialization',
             style: itemIndex == selectedIndex
-                ? TextStyles.font14DarkBlueBold
-                : TextStyles.font12DarkBlueRegular,
+                ? AppTextStyles.font14DarkBlueBold
+                : AppTextStyles.font12DarkBlueRegular,
           ),
         ],
       ),

@@ -29,11 +29,11 @@ class LoginScreen extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text('Welcome Back', style: TextStyles.font24BlueBold),
+                Text('Welcome Back', style: AppTextStyles.font24BlueBold),
                 Gap(8.h),
                 Text(
                   'We\'re excited to have you back, can\'t wait to see what you\'ve been up to since you last logged in.',
-                  style: TextStyles.font14GrayRegular,
+                  style: AppTextStyles.font14GrayRegular,
                 ),
                 Gap(36.h),
                 Column(
@@ -44,13 +44,13 @@ class LoginScreen extends StatelessWidget {
                       alignment: AlignmentDirectional.centerEnd,
                       child: Text(
                         'Forgot Password?',
-                        style: TextStyles.font13BlueRegular,
+                        style: AppTextStyles.font13BlueRegular,
                       ),
                     ),
                     Gap(40.h),
                     AppTextButton(
                       buttonText: "Login",
-                      textStyle: TextStyles.font16WhiteSemiBold,
+                      textStyle: AppTextStyles.font16WhiteSemiBold,
                       onPressed: () {
                         validateThenDoLogin(context);
                       },

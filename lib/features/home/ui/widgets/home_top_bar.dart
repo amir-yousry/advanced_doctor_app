@@ -14,14 +14,14 @@ class HomeTopBar extends StatelessWidget {
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text('Hi, Amir!', style: TextStyles.font18DarkBlueBold),
-            Text('How Are you Today?', style: TextStyles.font12GrayRegular),
+            Text('Hi, Amir!', style: AppTextStyles.font18DarkBlueBold),
+            Text('How Are you Today?', style: AppTextStyles.font12GrayRegular),
           ],
         ),
         const Spacer(),
         CircleAvatar(
           radius: 24.r,
-          backgroundColor: ColorsManager.moreLighterGray,
+          backgroundColor: AppColors.moreLighterGray,
           child: SvgPicture.asset('assets/svgs/notifications.svg'),
         ),
       ],

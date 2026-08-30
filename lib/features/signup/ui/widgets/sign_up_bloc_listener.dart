@@ -47,13 +47,13 @@ class SignupBlocListener extends StatelessWidget {
       context: context,
       builder: (context) => AlertDialog(
         icon: const Icon(Icons.error, color: Colors.red, size: 32),
-        content: Text(error, style: TextStyles.font15DarkBlueMedium),
+        content: Text(error, style: AppTextStyles.font15DarkBlueMedium),
         actions: [
           TextButton(
             onPressed: () {
               context.pop();
             },
-            child: Text('Got it', style: TextStyles.font14BlueSemiBold),
+            child: Text('Got it', style: AppTextStyles.font14BlueSemiBold),
           ),
         ],
       ),
@@ -71,7 +71,7 @@ class SignupBlocListener extends StatelessWidget {
             showDialog(
               context: context,
               builder: (context) => const Center(
-                child: CircularProgressIndicator(color: ColorsManager.mainBlue),
+                child: CircularProgressIndicator(color: AppColors.mainBlue),
               ),
             );
           },
