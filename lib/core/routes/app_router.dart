@@ -1,9 +1,8 @@
+import 'package:advanced_doctor_app/core/dependency_injection/dependency_injection.dart';
 import 'package:advanced_doctor_app/core/routes/routes.dart';
-import 'package:advanced_doctor_app/features/home/ui/home_screen.dart';
 import 'package:advanced_doctor_app/features/login/logic/login_cubit.dart';
 import 'package:advanced_doctor_app/features/login/ui/login_screen.dart';
 import 'package:advanced_doctor_app/features/onboarding/onboarding_screen.dart';
-import 'package:advanced_doctor_app/features/signup/ui/signup_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -22,7 +21,7 @@ class AppRouter {
             child: const LoginScreen(),
           ),
         );
-      case Routes.signUpScreen:
+      /*case Routes.signUpScreen:
         return MaterialPageRoute(
           builder: (_) => BlocProvider(
             create: (context) => getIt<SignupCubit>(),
@@ -35,7 +34,7 @@ class AppRouter {
             create: (context) => HomeCubit(getIt())..getSpecializations(),
             child: const HomeScreen(),
           ),
-        );
+        );*/
       default:
         return null;
     }
