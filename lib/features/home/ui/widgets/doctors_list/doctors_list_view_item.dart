@@ -1,9 +1,11 @@
 import 'package:advanced_doctor_app/core/theme/colors.dart';
 import 'package:advanced_doctor_app/core/theme/styles.dart';
 import 'package:advanced_doctor_app/features/home/data/models/specializations_response_model.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gap/flutter_gap.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:shimmer/shimmer.dart';
 
 class DoctorsListViewItem extends StatelessWidget {
   final Doctors? doctorsModel;

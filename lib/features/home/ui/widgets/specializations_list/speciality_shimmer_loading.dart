@@ -2,6 +2,7 @@ import 'package:advanced_doctor_app/core/theme/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gap/flutter_gap.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:shimmer/shimmer.dart';
 
 class SpecialityShimmerLoading extends StatelessWidget {
   const SpecialityShimmerLoading({super.key});
