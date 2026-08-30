@@ -1,4 +1,3 @@
-
 import 'package:advanced_doctor_app/core/network/api_error_handler.dart';
 import 'package:advanced_doctor_app/core/network/api_result.dart';
 import 'package:advanced_doctor_app/core/network/api_service.dart';
@@ -16,7 +15,7 @@ class SignupRepo {
       final response = await _apiService.signup(signupRequestBody);
       return ApiResult.success(response);
     } catch (error) {
-      return ApiResult.failure(ErrorHandler.handle(error));
+      return ApiResult.failure(ApiErrorHandler.handle(error));
     }
   }
 }
