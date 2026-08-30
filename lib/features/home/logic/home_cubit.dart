@@ -1,5 +1,4 @@
 import 'package:advanced_doctor_app/core/helpers/extensions.dart';
-import 'package:advanced_doctor_app/core/network/api_error_handler.dart';
 import 'package:advanced_doctor_app/core/network/api_result.dart';
 import 'package:advanced_doctor_app/features/home/data/models/specializations_response_model.dart';
 import 'package:advanced_doctor_app/features/home/data/repo/home_repo.dart';
