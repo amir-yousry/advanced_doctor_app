@@ -16,7 +16,7 @@ void main() async {
   runApp(DocApp(appRouter: AppRouter()));
 }
 
-Future<bool> checkIfLoggedInUser() async {
+Future<void> checkIfLoggedInUser() async {
   String? userToken = await SharedPrefHelper.getSecuredString(
     SharedPrefKeys.userToken,
   );
@@ -25,6 +25,4 @@ Future<bool> checkIfLoggedInUser() async {
   } else {
     isLoggedInUser = true;
   }
-
-  return true;
 }

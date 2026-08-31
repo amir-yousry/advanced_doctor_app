@@ -5,7 +5,7 @@ plugins {
 }
 
 android {
-    namespace = "com.example.advanced_doctor_app"
+    namespace = "com.amir.doctor_app"
     compileSdk = flutter.compileSdkVersion
     ndkVersion = flutter.ndkVersion
 
@@ -23,6 +23,21 @@ android {
         targetSdk = flutter.targetSdkVersion
         versionCode = flutter.versionCode
         versionName = flutter.versionName
+    }
+
+    flavorDimensions += "default"
+    productFlavors {
+        create("development") {
+            dimension = "default"
+            applicationIdSuffix = ".dev"
+            versionNameSuffix = "-dev"
+            resValue("string", "app_name", "Docdoc Development")
+        }
+
+        create("production") {
+            dimension = "default"
+            resValue("string", "app_name", "Docdoc")
+        }
     }
 
     buildTypes {
