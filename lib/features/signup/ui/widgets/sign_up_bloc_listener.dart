@@ -1,4 +1,5 @@
 import 'package:advanced_doctor_app/core/helpers/extensions.dart';
+import 'package:advanced_doctor_app/core/network/api_error_model.dart';
 import 'package:advanced_doctor_app/core/routes/routes.dart';
 import 'package:advanced_doctor_app/core/theme/colors.dart';
 import 'package:advanced_doctor_app/core/theme/styles.dart';
@@ -9,6 +10,36 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 class SignupBlocListener extends StatelessWidget {
   const SignupBlocListener({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return BlocListener<SignupCubit, SignupState>(
+      listenWhen: (previous, current) =>
+          current is SignupLoading ||
+          current is SignupSuccess ||
+          current is SignupError,
+      listener: (context, state) {
+        state.whenOrNull(
+          signupLoading: () {
+            showDialog(
+              context: context,
+              builder: (context) => const Center(
+                child: CircularProgressIndicator(color: AppColors.mainBlue),
+              ),
+            );
+          },
+          signupSuccess: (signupResponse) {
+            context.pop();
+            showSuccessDialog(context);
+          },
+          signupError: (apiErrorModel) {
+            setupErrorState(context, apiErrorModel);
+          },
+        );
+      },
+      child: const SizedBox.shrink(),
+    );
+  }
 
   void showSuccessDialog(BuildContext context) {
     showDialog(
@@ -41,13 +72,16 @@ class SignupBlocListener extends StatelessWidget {
     );
   }
 
-  void setupErrorState(BuildContext context, String error) {
+  void setupErrorState(BuildContext context, ApiErrorModel apiErrorModel) {
     context.pop();
     showDialog(
       context: context,
       builder: (context) => AlertDialog(
         icon: const Icon(Icons.error, color: Colors.red, size: 32),
-        content: Text(error, style: AppTextStyles.font15DarkBlueMedium),
+        content: Text(
+          apiErrorModel.getAllErrorMessages(),
+          style: AppTextStyles.font15DarkBlueMedium,
+        ),
         actions: [
           TextButton(
             onPressed: () {
@@ -57,34 +91,6 @@ class SignupBlocListener extends StatelessWidget {
           ),
         ],
       ),
-    );
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return BlocListener<SignupCubit, SignupState>(
-      listenWhen: (previous, current) =>
-          current is Loading || current is Success || current is Error,
-      listener: (context, state) {
-        state.whenOrNull(
-          loading: () {
-            showDialog(
-              context: context,
-              builder: (context) => const Center(
-                child: CircularProgressIndicator(color: AppColors.mainBlue),
-              ),
-            );
-          },
-          success: (signupResponse) {
-            context.pop();
-            showSuccessDialog(context);
-          },
-          error: (error) {
-            setupErrorState(context, error);
-          },
-        );
-      },
-      child: const SizedBox.shrink(),
     );
   }
 }
