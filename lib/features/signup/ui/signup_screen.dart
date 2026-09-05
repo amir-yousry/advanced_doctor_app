@@ -1,4 +1,3 @@
-import 'package:advanced_doctor_app/core/helpers/spacing.dart';
 import 'package:advanced_doctor_app/core/theme/styles.dart';
 import 'package:advanced_doctor_app/features/login/ui/widgets/terms_and_conditions_text.dart';
 import 'package:advanced_doctor_app/features/signup/logic/signup_cubit.dart';
@@ -8,6 +7,7 @@ import 'package:advanced_doctor_app/features/signup/ui/widgets/sign_up_form.dart
 import 'package:advanced_doctor_app/shared/app_text_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_gap/flutter_gap.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class SignupScreen extends StatelessWidget {
@@ -29,27 +29,27 @@ class SignupScreen extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text('Create Account', style: TextStyles.font24BlueBold),
-                verticalSpace(8),
+                Text('Create Account', style: AppTextStyles.font24BlueBold),
+                Gap(8.h),
                 Text(
                   'Sign up now and start exploring all that our app has to offer. We\'re excited to welcome you to our community!',
-                  style: TextStyles.font14GrayRegular,
+                  style: AppTextStyles.font14GrayRegular,
                 ),
-                verticalSpace(36),
+                Gap(36.h),
                 Column(
                   children: [
                     const SignupForm(),
-                    verticalSpace(40),
+                    Gap(40.h),
                     AppTextButton(
                       buttonText: "Create Account",
-                      textStyle: TextStyles.font16WhiteSemiBold,
+                      textStyle: AppTextStyles.font16WhiteSemiBold,
                       onPressed: () {
                         validateThenDoSignup(context);
                       },
                     ),
-                    verticalSpace(16),
+                    Gap(16.h),
                     const TermsAndConditionsText(),
-                    verticalSpace(30),
+                    Gap(30.h),
                     const AlreadyHaveAccountText(),
                     const SignupBlocListener(),
                   ],
